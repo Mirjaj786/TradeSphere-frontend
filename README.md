@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# TradeSphere-frontend
+
+Title: TradeSphere-frontend
+
+Description:
+A responsive frontend TradeSphere-frontend, built using React and Bootstrap.
+This project replicates Zerodha’s modern UI with sections like Hero, Pricing, Stats, Footer, and Policy pages.
+
+🔹 Features:
+
+📱 Fully responsive design (mobile, tablet, desktop)
+
+🎨 Clean and minimal UI inspired by Zerodha
+
+⚡ Built with React + Bootstrap
+
+📝 Dummy project (no backend / live APIs)
+
+🔹 Tech Stack:
+
+React
+
+Bootstrap 5
+
+CSS / JSX
+
+🔹 Deployment:
+
+Hosted on Netlify / Vercel (choose one)
+>>>>>>> 793cd6b7a13e3ff00c391a27b950d40924523fe8
