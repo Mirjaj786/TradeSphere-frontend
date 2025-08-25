@@ -1,13 +1,157 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Sign Up btn style */
+.signup-btn {
+  width: 15%;
+  margin: 0 auto;
+  background-color: #387ed1 !important ;
+}
+
+.signup-btn:hover {
+  background-color: black !important;
+}
+
+/* Nav Style */
+.nav-link {
+  margin-left: 40px;
+}
+
+.nav-link:hover {
+  color: rgb(62, 128, 249) !important ;
+}
+
+.navSelected {
+  color: rgb(62, 128, 249);
+}
+
+.footer-icon {
+  opacity: 0.8 !important;
+  font-size: 15px;
+}
+.footer-icon:hover {
+  color: rgb(62, 128, 249) !important ;
+}
+
+/* Footer Icons and other Items  */
+.icons i {
+  font-size: 1.6rem;
+  margin-right: 1.3rem;
+  opacity: 0.6;
+  padding: 5px;
+}
+
+.links a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  color: gray;
+  opacity: 0.9;
+  margin-bottom: 18px !important;
+}
+
+.univers_para {
+  color: black;
+  opacity: 0.6;
+  margin-top: 1.5rem;
+  font-size: small;
+}
+
+/* Universe Links */
+.Links {
+  text-decoration: none;
+}
+
+.ticket-link a {
+  text-decoration: none;
+  line-height: 2.5;
+  font-size: 1rem;
+  color: #387ed1;
+  opacity: 0.8;
+}
+
+#support-hero {
+  background-color: rgb(62, 128, 249) !important;
+}
+
+#support-hero input {
+  width: 80% ;
+  height: 4rem;
+  padding: 3px;
+  margin: 4px;
+  font-size: 23px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#support-hero a {
+color: white;
+font-size: 1.25rem;
+}
+
+
+#supportWapper {
+  display: flex ;
+  justify-content: space-between !important;
+  color: white !important;
+  margin: 0 150px 0 150px;
+}
+
+
+/* Flash (global) */
+.flash-container {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  pointer-events: none;
+}
+.flash-message {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 14px 20px;
+  margin: 0 auto;
+  min-width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  color: #fff;
+  border: 1px solid transparent;
+  pointer-events: auto;
+}
+.flash-success { background: #16a34a; border-color: #14532d; }
+.flash-error   { background: #dc2626; border-color: #7f1d1d; }
+.flash-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+
+/* Responsive desine */
+
+@media only screen and (max-width: 600px) {
+  #supportWapper {
+    
+
+  }
 }

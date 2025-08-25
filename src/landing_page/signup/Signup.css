@@ -1,0 +1,492 @@
+/* Signup Page Styles */
+.signup-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.signup-hero {
+  padding: 2rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.signup-content {
+  padding: 2rem;
+  color: #333;
+}
+
+.signup-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.signup-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.signup-features {
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.feature-item i {
+  color: #28a745;
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+/* Form Container */
+.signup-form-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #387ed1, #28a745, #ffc107, #dc3545);
+  background-size: 300% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.signup-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signup-form-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.signup-form-header p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Form Styles */
+.signup-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.form-group:focus-within label {
+  color: #387ed1;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  position: relative;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #387ed1;
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.1);
+  background-color: #fff;
+  transform: translateY(-1px);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+  animation: shake 0.5s ease-in-out;
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc3545;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Checkbox Styles */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.form-check:hover {
+  transform: translateX(2px);
+}
+
+.form-check-input {
+  margin-top: 0.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+  background-color: #387ed1;
+  border-color: #387ed1;
+  transform: scale(1.1);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.1);
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.form-check:hover .form-check-label {
+  color: #387ed1;
+}
+
+.terms-link {
+  color: #387ed1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+  color: #2c5aa0;
+  transform: translateY(-1px);
+}
+
+/* Submit Button */
+.signup-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #387ed1 0%, #2c5aa0 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.signup-submit-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.signup-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2c5aa0 0%, #1e3a6b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 126, 209, 0.3);
+}
+
+.signup-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.signup-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer */
+.signup-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e1e5e9;
+}
+
+.signup-footer p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #387ed1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #2c5aa0;
+  transform: translateY(-1px);
+}
+
+/* Success state styling */
+.form-control.is-valid {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.form-control.is-valid:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Loading state for submit button */
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .signup-hero {
+    padding: 1rem 0;
+  }
+  
+  .signup-content {
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .signup-title {
+    font-size: 2.5rem;
+  }
+  
+  .signup-form-container {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .signup-title {
+    font-size: 2rem;
+  }
+  
+  .signup-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .signup-form-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .signup-form-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .form-control {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+  
+  .signup-submit-btn {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .signup-content {
+    padding: 0.5rem;
+  }
+  
+  .signup-form-container {
+    padding: 1.25rem;
+    margin: 0 0.5rem;
+  }
+  
+  .signup-title {
+    font-size: 1.75rem;
+  }
+  
+  .signup-subtitle {
+    font-size: 1rem;
+  }
+  
+  .feature-item {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for form appearance */
+.signup-form-container {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for form elements */
+.form-control:hover:not(:focus) {
+  border-color: #c1c7cd;
+}
+
+/* Custom scrollbar for form */
+.signup-form-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.signup-form-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.signup-form-container::-webkit-scrollbar-thumb {
+  background: #c1c7cd;
+  border-radius: 3px;
+}
+
+.signup-form-container::-webkit-scrollbar-thumb:hover {
+  background: #a8aeb4;
+}
+
+/* Enhanced focus states for accessibility */
+.form-control:focus,
+.form-check-input:focus,
+.signup-submit-btn:focus {
+  outline: 2px solid #387ed1;
+  outline-offset: 2px;
+}
+
+/* Password strength indicator */
+.password-strength {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.password-strength.weak { color: #dc3545; }
+.password-strength.medium { color: #ffc107; }
+.password-strength.strong { color: #28a745; }
+
+/* Form field icons */
+.form-group {
+  position: relative;
+}
+
+.form-group .field-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.form-group:focus-within .field-icon {
+  color: #387ed1;
+}
+
+/* Enhanced button states */
+.signup-submit-btn:focus {
+  outline: 2px solid #387ed1;
+  outline-offset: 2px;
+}
+
+/* Form validation success animation */
+.form-control.is-valid {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
