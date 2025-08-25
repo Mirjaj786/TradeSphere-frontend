@@ -18,7 +18,7 @@ export default function Stats() {
           <p className="text-muted fs-5 mb-4">
             No gimmicks, spam, "gamification", or annoying push notifications.
             High quality apps that you use at your pace, the way you like.{" "}
-            <a href="" style={{ textDecoration: "none" }}>
+            <a href="/not-available" style={{ textDecoration: "none" }}>
               Our philosophies.
             </a>
           </p>
@@ -42,14 +42,14 @@ export default function Stats() {
         <div className="col-12 col-lg-6 text-center">
           <img
             src="Media/Images/ecosystem.png"
-            alt="Products Image"
+            alt="Products"
             className="img-fluid mb-4"
           />
           <div className="d-flex justify-content-center gap-4 flex-wrap">
-            <a href="" style={{ textDecoration: "none" }}>
+            <a href="/product" style={{ textDecoration: "none" }}>
               Explore our products <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="" style={{ textDecoration: "none" }}>
+            <a href="/not-available" style={{ textDecoration: "none" }}>
               Try Kite demo <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
           </div>

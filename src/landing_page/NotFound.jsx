@@ -21,7 +21,7 @@ export default function NotFound() {
         <div className="col-12 col-md-6 text-center">
           <img
             src="Media/Images/kiaan404.jpg"
-            alt="Not Found Image"
+            alt="Not Found "
             className="img-fluid"
           />
         </div>

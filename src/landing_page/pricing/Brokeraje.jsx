@@ -7,7 +7,7 @@ export default function Brokerage() {
         {/* Left Column */}
         <div className="col-12 col-md-6 mb-5">
           <h3 className="text-center mb-4">
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="/not-available" style={{ textDecoration: "none" }}>
               Brokerage Calculator
             </a>
           </h3>
@@ -39,7 +39,7 @@ export default function Brokerage() {
         {/* Right Column */}
         <div className="col-12 col-md-6">
           <h3 className="text-center mb-4">
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="/not-available" style={{ textDecoration: "none" }}>
               List of Charges
             </a>
           </h3>

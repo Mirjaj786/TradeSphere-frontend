@@ -10,12 +10,12 @@ export default function Hero() {
         </h3>
         <p className="mb-4 fs-5">
           Check out our{" "}
-          <a href="#" className="text-decoration-none fw-semibold">
+          <a href="/not-available" className="text-decoration-none fw-semibold">
             investment offerings{" "}
             <i className="fa fa-long-arrow-right ms-1" aria-hidden="true"></i>
           </a>
         </p>
-        <a href="#" className="btn btn-primary px-4 py-2">
+        <a href="/product" className="btn btn-primary px-4 py-2">
           Explore Products
         </a>
         <hr className="mx-auto w-50 mt-5" />

@@ -13,7 +13,7 @@ export default function NotFound() {
           </p>
         </div>
         <div className="col">
-          <img src="Media/Images/kiaan404.jpg" alt="Not Found Image" />
+          <img src="Media/Images/kiaan404.jpg" alt="Not Found" />
         </div>
       </div>
     </div>

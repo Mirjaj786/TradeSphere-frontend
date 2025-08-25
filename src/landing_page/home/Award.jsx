@@ -8,7 +8,7 @@ export default function Award() {
         <div className="col-12 col-md-6 text-center mb-4 mb-md-0">
           <img
             src="Media/Images/largestBroker.svg"
-            alt="Award Image"
+            alt="Award"
             className="img-fluid"
             style={{ maxHeight: "300px" }}
           />

@@ -49,7 +49,7 @@ export default function ProductPage() {
       />
       <p className="text-center fs-4 pb-5">
         Want to know more about our technology stack? Check out the{" "}
-        <a href="" style={{textDecoration: "none"}}>Zerodha.tech </a>{" "}blog.
+        <a href="/" style={{textDecoration: "none"}}>Zerodha.tech </a>{" "}blog.
       </p>
       <Universe />
     </>

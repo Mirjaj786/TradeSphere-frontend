@@ -14,7 +14,7 @@ export default function LeftSection({
       <div className="row align-items-center">
         {/* Product Image */}
         <div className="col-12 col-md-6 text-center mb-4 mb-md-0">
-          <img src={ProductImg} alt="Product Image" className="img-fluid" />
+          <img src={ProductImg} alt="Product " className="img-fluid" />
         </div>
 
         {/* Product Info */}
