@@ -8,7 +8,6 @@ export default function Signup() {
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
     terms: false,
   });
 
@@ -50,21 +49,18 @@ export default function Signup() {
       newErrors.password = "Password must be at least 8 characters long";
     }
 
-    // Only validate confirmPassword if the field is present/used
-    if (
-      typeof formData.confirmPassword === "string" &&
-      formData.confirmPassword.length > 0 &&
-      formData.password !== formData.confirmPassword
-    ) {
-      newErrors.confirmPassword = "Passwords do not match";
-    }
-
     if (!formData.terms) {
       newErrors.terms = "You must accept the terms and conditions";
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+  };
+
+  // ✅ Flash helper
+  const setFlash = (type, message) => {
+    if (!message) return;
+    localStorage.setItem(`flash_${type}`, message);
   };
 
   const handleSubmit = async (e) => {
@@ -89,27 +85,41 @@ export default function Signup() {
       });
 
       const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        throw new Error(data?.error || "Registration failed");
+        throw new Error(
+          data?.error || "Registration failed, User already exists!"
+        );
       }
-      if (data?.message) {
-        localStorage.setItem("flash_success", data.message);
-      }
+
+      // ✅ Success flash
+      setFlash("success", data?.message || "Account created successfully!");
+
       if (data?.user) {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
+
       setFormData({
         username: "",
         email: "",
         password: "",
-        confirmPassword: "",
         terms: false,
       });
-      // Redirect to dashboard to show flash banner there and use user immediately
-      window.location.href = "http://localhost:3001/";
+
+      // Redirect to signin so flash shows there
+      window.location.href = "http://localhost:3000/signin";
     } catch (error) {
       console.error("Error submitting form:", error);
-      setErrors((prev) => ({ ...prev, global: error.message || "There was an error creating your account. Please try again." }));
+
+      // ✅ Error flash
+      setFlash(
+        "error",
+        error.message ||
+          "There was an error creating your account. Please try again."
+      );
+
+      // Redirect anyway so flash is visible on signin
+      window.location.href = "http://localhost:3000/signin";
     } finally {
       setIsSubmitting(false);
     }
@@ -212,26 +222,6 @@ export default function Signup() {
                     )}
                   </div>
 
-                  {/* <div className="form-group">
-                    <label htmlFor="confirmPassword">Confirm Password *</label>
-                    <input
-                      type="password"
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                      className={`form-control ${
-                        errors.confirmPassword ? "is-invalid" : ""
-                      }`}
-                      placeholder="Confirm password"
-                    />
-                    {errors.confirmPassword && (
-                      <div className="invalid-feedback">
-                        {errors.confirmPassword}
-                      </div>
-                    )}
-                  </div> */}
-
                   {/* Terms */}
                   <div className="form-group">
                     <div className="form-check">
@@ -287,7 +277,7 @@ export default function Signup() {
                   <p>
                     Already have an account?{" "}
                     <Link to="/signin" className="login-link">
-                      Sign in
+                      Login
                     </Link>
                   </p>
                 </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Flash from "../../Flash";
 import "./Signin.css";
 import { Link } from "react-router-dom";
 
@@ -33,7 +32,7 @@ export default function Signin() {
     const newErrors = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = "email is required";
+      newErrors.email = "Email is required";
     }
 
     if (!formData.password) {
@@ -63,32 +62,37 @@ export default function Signin() {
           password: formData.password,
         }),
       });
+
       const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
         throw new Error(data?.error || "Login failed");
       }
-      if (data?.flash?.success) {
-        localStorage.setItem("flash_success", data.flash.success);
-      } else if (data?.message) {
+
+      // ✅ Store flash message for dashboard project
+      if (data?.message) {
         localStorage.setItem("flash_success", data.message);
       }
+
+      // ✅ Store user if backend returns it
       if (data?.user) {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
-      // Redirect to dashboard app after successful login
-      // For testing, use localhost first
-      window.location.href = "https://trade-sphare.netlify.app/";
-      <div class="alert alert-success" role="alert">
-       Login successful
-      </div>;
-      // window.location.href = "https://trade-sphare.netlify.app/";
+
+      // ✅ Redirect to dashboard project
+      window.location.href = "http://localhost:3001";
     } catch (error) {
       console.error("Error signing in:", error);
-      console.error("Response data:", error.response?.data);
-      alert(
+
+      // ✅ Store error flash for dashboard
+      localStorage.setItem(
+        "flash_error",
         error.message ||
           "There was an error signing in. Please check your credentials and try again."
       );
+
+      // Redirect anyway so dashboard shows flash error
+      window.location.href = "http://localhost:3001";
     } finally {
       setIsSubmitting(false);
     }
@@ -230,7 +234,7 @@ export default function Signin() {
                   <p className="">
                     Don't have an account? &nbsp;{" "}
                     <a href="/signup" className="signup-link">
-                      Sign up
+                      Register
                     </a>
                   </p>
                 </div>
