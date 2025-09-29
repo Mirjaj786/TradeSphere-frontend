@@ -15,7 +15,7 @@ export default function Hero() {
             <i className="fa fa-long-arrow-right ms-1" aria-hidden="true"></i>
           </a>
         </p>
-        <a href="/product" className="btn btn-primary px-4 py-2">
+        <a href="/signup" className="btn btn-primary px-4 py-2">
           Explore Products
         </a>
         <hr className="mx-auto w-50 mt-5" />

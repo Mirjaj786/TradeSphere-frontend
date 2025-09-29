@@ -69,29 +69,24 @@ export default function Signin() {
         throw new Error(data?.error || "Login failed");
       }
 
-      // ✅ Store flash message for dashboard project
       if (data?.message) {
         localStorage.setItem("flash_success", data.message);
       }
 
-      // ✅ Store user if backend returns it
       if (data?.user) {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
 
-      // ✅ Redirect to dashboard project
       window.location.href = "http://localhost:3001";
     } catch (error) {
       console.error("Error signing in:", error);
 
-      // ✅ Store error flash for dashboard
       localStorage.setItem(
         "flash_error",
         error.message ||
           "There was an error signing in. Please check your credentials and try again."
       );
 
-      // Redirect anyway so dashboard shows flash error
       window.location.href = "http://localhost:3001";
     } finally {
       setIsSubmitting(false);
