@@ -57,7 +57,7 @@ export default function Signup() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // ✅ Flash helper
+ 
   const setFlash = (type, message) => {
     if (!message) return;
     localStorage.setItem(`flash_${type}`, message);
@@ -92,7 +92,7 @@ export default function Signup() {
         );
       }
 
-      // ✅ Success flash
+     
       setFlash("success", data?.message || "Account created successfully!");
 
       if (data?.user) {
@@ -106,20 +106,17 @@ export default function Signup() {
         terms: false,
       });
 
-      // Redirect to signin so flash shows there
-      window.location.href = "http://localhost:3000/signin";
+      window.location.href = "https://trade-sphereweb.vercel.app/signin";
     } catch (error) {
       console.error("Error submitting form:", error);
 
-      // ✅ Error flash
       setFlash(
         "error",
         error.message ||
           "There was an error creating your account. Please try again."
       );
 
-      // Redirect anyway so flash is visible on signin
-      window.location.href = "http://localhost:3000/signin";
+      window.location.href = "https://trade-sphereweb.vercel.app/signin";
     } finally {
       setIsSubmitting(false);
     }
